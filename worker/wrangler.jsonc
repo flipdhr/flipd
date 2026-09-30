@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "flipd-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-30",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": { "enabled": true, "head_sampling_rate": 1 },
+  "vars": {
+    "APP_NAME": "FLIPD",
+    "ALLOWED_ORIGINS": "http://localhost:5173"
+  },
+  "secrets": { "required": ["SESSION_SECRET", "ADMIN_BOOTSTRAP_SECRET"] },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "flipd-production",
+      "database_id": "REPLACE_AFTER_D1_CREATE",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

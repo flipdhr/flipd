@@ -1,0 +1,11 @@
+{
+  "name": "flipd",
+  "private": true,
+  "workspaces": ["frontend", "worker"],
+  "scripts": {
+    "build": "npm run build --workspace frontend && npm run typecheck --workspace worker",
+    "test": "npm run test --workspace worker",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "dev:worker": "npm run dev --workspace worker"
+  }
+}

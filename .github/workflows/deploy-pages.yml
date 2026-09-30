@@ -1,0 +1,24 @@
+name: Deploy FLIPD frontend
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run build --workspace frontend
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+          BASE_PATH: /${{ github.event.repository.name }}/
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: frontend/dist }
+      - uses: actions/deploy-pages@v4
