@@ -8,7 +8,7 @@
   "observability": { "enabled": true, "head_sampling_rate": 1 },
   "vars": {
     "APP_NAME": "FLIPD",
-    "ALLOWED_ORIGINS": "http://localhost:5173"
+    "ALLOWED_ORIGINS": "http://localhost:5173,https://stockdhr.github.io/flipd"
   },
   "secrets": { "required": ["SESSION_SECRET", "ADMIN_BOOTSTRAP_SECRET"] },
   "d1_databases": [
