@@ -15,7 +15,7 @@
     {
       "binding": "DB",
       "database_name": "flipd-production",
-      "database_id": "REPLACE_AFTER_D1_CREATE",
+      "database_id": "f8c23041-462a-462b-89fe-0778f1c31468",
       "migrations_dir": "migrations"
     }
   ]
